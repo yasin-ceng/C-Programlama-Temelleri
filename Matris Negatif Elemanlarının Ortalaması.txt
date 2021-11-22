@@ -1,0 +1,57 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) {
+setlocale(LC_ALL," ");
+
+int i,j,m,n,ort=0,toplam=0,sayi=0;
+
+printf("Matrisiniz kac satir ?\n");
+scanf("%d",&m);
+
+printf("Matrisiniz kac sutun ?\n");
+scanf("%d",&n);
+
+int A[m][n];
+
+printf("Matrisinizin verilerini giriniz.\n");
+
+for(i=0;i<m;i++)
+	for(j=0;j<n;j++)
+		scanf("%d",&A[i][j]);
+
+for(i=0;i<m;i++)
+{
+	for(j=0;j<n;j++)
+		{
+			printf(" %d",A[i][j]);	
+			
+		}
+}
+
+printf("\nGirdiginiz Matrisin Negatif Elemanlar Ortalamasi:\n")	;
+
+toplam=0;
+
+for(i=0;i<m;i++)
+{
+	for(j=0;j<n;j++)
+		{
+			if(0>A[i][j]){
+			toplam+=A[i][j];
+			sayi++;	
+			}
+			
+		}
+}
+printf("gelen toplam: %d ; Gelen Sayi: %d\n",toplam,sayi);
+ort=toplam/sayi;
+printf("ortalama: %d",ort);
+//printf("%d",ort);
+
+	return 0;
+}

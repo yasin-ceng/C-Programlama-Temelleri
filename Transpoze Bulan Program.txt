@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) {
+setlocale(LC_ALL," ");
+
+int i,j,m,n;
+basla:
+printf("Matrisiniz kac satir ?\n");
+scanf("%d",&m);
+
+printf("Matrisiniz kac sutun ?\n");
+scanf("%d",&n);
+
+int A[m][n];
+
+printf("\nMatrisinizin verileri Sunlardir:\n");
+
+for(i=0;i<m;i++)
+	for(j=0;j<n;j++)
+		A[i][j]=rand()%10;
+		//scanf("%d",&A[i][j]);
+
+for(i=0;i<m;i++)
+{
+
+	printf("\n");	
+	for(j=0;j<n;j++)
+		printf(" %d",A[i][j]);	
+}
+
+printf("\n\nGirdiginiz Matrisin Transpoz'u:\n")	;
+
+for(j=0;j<n;j++)
+{
+
+	printf("\n");	
+	for(i=0;i<m;i++)
+		printf(" %d",A[i][j]);	
+}
+printf("\n");
+goto basla;
+	return 0;
+}
